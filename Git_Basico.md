@@ -48,6 +48,7 @@ Mostra historico em apenas uma linha por commit:
 
 * git log --oneline
 * git log -p
+* git log --graph
 
 No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 
@@ -74,9 +75,31 @@ Para enviar as mudanças feitas localmente para o repositorio remoto, usaremos o
 
 Para trabalhar com branchs basta usar o comando:
 
-  *git branch - informas as branchs atuais
-  *git branch <nome da branch> - cria uma nova branch
+    *git branch - informas as branchs atuais
+    *git branch <nome da branch> - cria uma nova branch
 
 Para mudar de branch:
-  *git checkout <nome da branch>
-  *git checkout -b <nome  da branch> - cria e muda para a nova branch criada
+    *git checkout <nome da branch>
+    *git checkout -b <nome  da branch> - cria e muda para a nova branch criada
+
+Para unir branchs:
+    *git merge <nome da branch> - fazerá a união da branch informada com a branch atual na qual está
+    *git rebase <nome da branch> - Não cria um commit de merge
+
+Para voltar um arquivo ao estado anterior:
+    *git checkout -- <nome arquivo> - antes de commitar
+
+Para reverter um commit feito usamos:
+    *git revert <hash do commit atual a ser revertido>
+
+Ou seja para reveter mudanças segue a ordem:
+    *git checkout - antes de adicionalas
+    *git reset - antes de commitar
+    *git revert - após commitar
+
+Para salvar as mudanças feitas temporariamente usamos o:
+    *git stash - salva a mudança
+    *git stash list - mostra a lista de salvamentos
+    *git stash apply <numero na list> - aplica a mudança feita
+    *git stash drop - apaga a mudança salva
+    *git stash pop - aplica a última alteração salva, e apaga
