@@ -1,6 +1,6 @@
-_Esse repositório está em construção e portanto pode ser modificado a ordem ou a estrutura de como será passado as informções, e ainda será feita correções ortográficas_ 😅
+_Esse repositório está em construção e portanto pode ser modificado a ordem ou estrutura de como será passado as informções, e ainda será feita correções ortográficas pois os erros estão claros por enquanto rsrs_ 😅
 
-_É importante também orientar que esse repositório tem como base apenas dá passar uma breve informação sobre os comando basicos do git e não explicar eles de fato, é fortemente indicado a leitura da [Documentação oficial do GIT](https://git-scm.com/docs/git/pt_BR)_
+_É importante também orientar que esse repositório tem como base apenas mostrar uma breve noção básica sobre os comando do git, e não explicar eles de fato. É fortemente indicado a leitura da [Documentação oficial do GIT](https://git-scm.com/docs/git/pt_BR)_
 
 _Tendo essas considerações em mente... Tire bom proveito do conteúdo preparado!_ 😄
 <br>
@@ -8,7 +8,6 @@ _Tendo essas considerações em mente... Tire bom proveito do conteúdo preparad
 ## Iniciando Trabalhos com o git...
 
 Com esses comando vocês informará ao git quem você é com o seu nome e o seu email de usuario git :
-
 *  git config --local user.name "Teu nome sô"
 *  git config --local user.email "Teu email sô"
 
@@ -60,6 +59,7 @@ Mostra historico em apenas uma linha por commit:
 No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 
 Adicionar um endereço remoto do git:
+
 *   git remote add [_Nome do endereço_] [_Pasta ou url_]
 
 Para verificar usa o comando:
@@ -70,6 +70,7 @@ Para verificar usa o comando:
 
 Para clonar um repositorio basta apenas:
 
+
 *  git clone [_Endereço do repositorio_]
 
 Para sincronizar e atualizar nosso projeto local com o remoto basta o camando:
@@ -78,10 +79,8 @@ Para sincronizar e atualizar nosso projeto local com o remoto basta o camando:
 
 Para enviar as mudanças feitas localmente para o repositorio remoto, usaremos o comanda:
 *  git push [_Nome do repositorio remoto_] [_Banch que deseja enviar_]
-
-
+             
 Para trabalhar com branchs basta usar o comando:
-
 *  git branch - informas as branchs atuais
 *  git branch <nome da branch> - cria uma nova branch
 
