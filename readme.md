@@ -132,10 +132,12 @@ Envia para o repositorio remoto a tag:
 Unindo vários commits em um só:
 
 * git rebase -i HEAD~[_Número de commits_]
+ <br/>
 Exemplo:
      git commit -i HEAD~3
 ou
 * git rebase -i [_Hash do commit anterior ao qual o começa a união_]
+<br>
 Exemplo:
      git commit -i 3bf3re3
 * pick - Deixar
