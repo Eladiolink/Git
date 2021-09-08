@@ -103,3 +103,18 @@ Para salvar as mudanças feitas temporariamente usamos o:
     *git stash apply <numero na list> - aplica a mudança feita
     *git stash drop - apaga a mudança salva
     *git stash pop - aplica a última alteração salva, e apaga
+
+Viagem no tempo usando o comando:
+  *git checkout <hash do commit>
+
+Mostra as mudanças feitas não salvas:
+  *git diff
+
+Mostra as mudanças feitas em um determinado commit:
+  *git diff <hash do commit>
+
+Adiciona uma tag atual:
+  *git tag -a v0.1.0 -m "Menssagem na adição da tag"
+
+Envia para o repositorio remoto a tag:
+  *git push <repositorio remoto> <tag a ser enviada>
