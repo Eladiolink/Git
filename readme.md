@@ -8,30 +8,29 @@ _Tendo essas considerações em mente... Tire bom proveito do conteúdo preparad
 ## Iniciando Trabalhos com o git...
 
 Com esses comando vocês informará ao git quem você é com o seu nome e o seu email de usuario git :
-
-  git config --local user.name "Teu nome sô"
-  git config --local user.email "Teu email sô"
+*  git config --local user.name "Teu nome sô"
+*  git config --local user.email "Teu email sô"
 
 Para finalmente iniciar um repositorio git local, você terá que dá o comando:
-  git init
+*  git init
 
 Com esse comando será possível cirar um repositorio que guardará as alterações git, porém ele não armazeraná código, seria como um "sevidor" git:
 
-  git init --bare
+*  git init --bare
 
 Para adicionar um arquivo ao monitoramento git basta dá:
-  git add <arquivo a ser monitorado>
+*  git add [_arquivo a ser monitorado_]
 
 Para verificar o status das modificações feitas nos arquivos monitorados, basta o:
 
-  git status
+*  git status
 
 Para remover um arquivo do monirtoramento e remover um arquivo, basta o comando:
 
-  git rm <arquivo>
+*  git rm [_Arquivo_]
 
 Para salvar as mudanças feitos no código, temos o commando:
-  git commit -m "Messagem para o commit"
+*  git commit -m "Messagem para o commit"
 
   Note que o _-m_ é para informar a mensagem do commit, caso não seja informado
   o git abrirá uma editor de texto para você esprecre uma mensagem mais longa,
@@ -60,68 +59,112 @@ Mostra historico em apenas uma linha por commit:
 No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 
 Adicionar um endereço remoto do git:
-   git remote add <nome do endereço> <pasta ou url>
+
+*   git remote add [_Nome do endereço_] [_Pasta ou url_]
 
 Para verificar usa o comando:
 
-   git remote -v
+*   git remote -v
 
    Em que o  caminha _fetch_ será de onde o código será buscado e o _push_ é o caminho para onde o código será mandado.
 
 Para clonar um repositorio basta apenas:
 
-  git clone <endereço do repositorio>
+
+*  git clone [_Endereço do repositorio_]
 
 Para sincronizar e atualizar nosso projeto local com o remoto basta o camando:
 
-  git pull
+*  git pull
 
 Para enviar as mudanças feitas localmente para o repositorio remoto, usaremos o comanda:
-  git push <nome do repositorio remoto> <banch que deseja enviar>
-
-
+*  git push [_Nome do repositorio remoto_] [_Banch que deseja enviar_]
+             
 Para trabalhar com branchs basta usar o comando:
-
-    *git branch - informas as branchs atuais
-    *git branch <nome da branch> - cria uma nova branch
+*  git branch - informas as branchs atuais
+*  git branch <nome da branch> - cria uma nova branch
 
 Para mudar de branch:
-    *git checkout <nome da branch>
-    *git checkout -b <nome  da branch> - cria e muda para a nova branch criada
+*  git checkout <nome da branch>
+*  git checkout -b [_Nome da branch_] - cria e muda para a nova branch criada
 
 Para unir branchs:
-    *git merge <nome da branch> - fazerá a união da branch informada com a branch atual na qual está
-    *git rebase <nome da branch> - Não cria um commit de merge
+*  git merge [_Nome da branch_] - fazerá a união da branch informada com a branch atual na qual está
+
+*  git rebase [_Nome da branch_] - Não cria um commit de merge
 
 Para voltar um arquivo ao estado anterior:
-    *git checkout -- <nome arquivo> - antes de commitar
+*  git checkout -- [_Nome arquivo_] - antes de commitar
 
 Para reverter um commit feito usamos:
-    *git revert <hash do commit atual a ser revertido>
+*  git revert [_Hsh do commit atual a ser revertido_]
 
 Ou seja para reveter mudanças segue a ordem:
-    *git checkout - antes de adicionalas
-    *git reset - antes de commitar
-    *git revert - após commitar
+*  git checkout - antes de adicionalas
+*  git reset - antes de commitar
+*  git revert - após commitar
 
 Para salvar as mudanças feitas temporariamente usamos o:
-    *git stash - salva a mudança
-    *git stash list - mostra a lista de salvamentos
-    *git stash apply <numero na list> - aplica a mudança feita
-    *git stash drop - apaga a mudança salva
-    *git stash pop - aplica a última alteração salva, e apaga
+*  git stash - salva a mudança
+*  git stash list - mostra a lista de salvamentos
+*  git stash apply [_Numero na lista_] - aplica a mudança feita
+*  git stash drop - apaga a mudança salva
+*  git stash pop - aplica a última alteração salva, e apaga
 
 Viagem no tempo usando o comando:
-  *git checkout <hash do commit>
+*  git checkout [_Hash do commit_]
 
 Mostra as mudanças feitas não salvas:
-  *git diff
+*  git diff
 
 Mostra as mudanças feitas em um determinado commit:
-  *git diff <hash do commit>
+*  git diff [_Hash do commit_]
 
 Adiciona uma tag atual:
-  *git tag -a v0.1.0 -m "Menssagem na adição da tag"
+*  git tag -a v0.1.0 -m "Menssagem na adição da tag"
 
 Envia para o repositorio remoto a tag:
-  *git push <repositorio remoto> <tag a ser enviada>
+*  git push [_Repositorio remoto_] [_Tag a ser enviada_]
+
+## Ao Infinito..... E além!
+
+Unindo vários commits em um só:
+
+* git rebase -i HEAD~[_Número de commits_]
+Exemplo:
+     git commit -i HEAD~3
+ou
+* git rebase -i [_Hash do commit anterior ao qual o começa a união_]
+Exemplo:
+     git commit -i 3bf3re3
+* pick - Deixar
+* s - Juntar
+
+Após pedirá para você informar uma nova mensagem ao commit
+
+Para pegar as mudanças feitas em um commit especifico e trazer ele para uma determinada branch atual, basta fazer o Cherry-pick, com o comando:
+
+* git cherry-pick [_Hash do commit_]
+
+Ver uma alteração feita em um commit especifico:
+
+* git bisect start -> Inicia a busca
+* git bisect bad HEAD -> Commit Atual
+* git bisect good [_Hash do commit_] -> Onde estava bom
+* git bisect bad -> se não encontrou o problema
+* git bisect good -> se encontrou o problema
+* git bisect reset -> para finalizar a busca
+
+Para mostrar tudo o que foi feito no commit, usa o comando:
+
+* git show [_Hash do commit_]
+
+Para encontrar quem fez a alteração em um certo arquivo:
+
+* git blame [_arquivo desejado_]
+
+#### Tópicos Indicados
+Recomendo você dá uma pesquisada sobre os seguintes temas 😉:
+* Gitflow
+* Ferramentas Git visuais
+* GitHooks
