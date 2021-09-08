@@ -1,5 +1,8 @@
 ## Iniciando Trabalhos com o git...
 
+_Esse repositório está em construção e portanto pode ser modificado a ordem ou a estrutura de como será passado as informções, e ainda será feita correções ortográficas_😅
+
+_É importante também orientar que esse repositório tem como base apenas dá passar uma breve informação sobre os comando basicos do git e não explicar eles de fato, é fortemente indicado a leitura da [doc](https://git-scm.com/docs/git/pt_BR)_
 Com esses comando vocês informará ao git quem você é com o seu nome e o seu email de usuario git :
 
   git config --local user.name "Teu nome sô"
