@@ -1,6 +1,6 @@
-_Esse repositório está em construção e portanto pode ser modificado a ordem ou a estrutura de como será passado as informções, e ainda será feita correções ortográficas_ 😅
+_Esse repositório está em construção e portanto pode ser modificado a ordem ou estrutura de como será passado as informções, e ainda será feita correções ortográficas pois os erros estão claros por enquanto rsrs_ 😅
 
-_É importante também orientar que esse repositório tem como base apenas dá passar uma breve informação sobre os comando basicos do git e não explicar eles de fato, é fortemente indicado a leitura da [Documentação oficial do GIT](https://git-scm.com/docs/git/pt_BR)_
+_É importante também orientar que esse repositório tem como base apenas mostrar uma breve noção básica sobre os comando do git, e não explicar eles de fato. É fortemente indicado a leitura da [Documentação oficial do GIT](https://git-scm.com/docs/git/pt_BR)_
 
 _Tendo essas considerações em mente... Tire bom proveito do conteúdo preparado!_ 😄
 <br>
