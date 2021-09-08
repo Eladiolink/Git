@@ -11,6 +11,7 @@ Com esses comando vocês informará ao git quem você é com o seu nome e o seu 
 *  git config --local user.name "Teu nome sô"
 *  git config --local user.email "Teu email sô"
 
+**Init**
 Para finalmente iniciar um repositorio git local, você terá que dá o comando:
 *  git init
 
@@ -18,17 +19,21 @@ Com esse comando será possível cirar um repositorio que guardará as alteraç�
 
 *  git init --bare
 
+**Add**
 Para adicionar um arquivo ao monitoramento git basta dá:
 *  git add [_arquivo a ser monitorado_]
 
+**Status**
 Para verificar o status das modificações feitas nos arquivos monitorados, basta o:
 
 *  git status
 
+**Remove (rm)**
 Para remover um arquivo do monirtoramento e remover um arquivo, basta o comando:
 
 *  git rm [_Arquivo_]
 
+**Commit**
 Para salvar as mudanças feitos no código, temos o commando:
 *  git commit -m "Messagem para o commit"
 
@@ -44,6 +49,7 @@ Definições usadas pelo o Git:
 
 * *index*: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
 
+**Log**
 Para verificar o historico de modificações podemos usar o comando:
 
 * git log
@@ -58,6 +64,9 @@ Mostra historico em apenas uma linha por commit:
 
 No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 
+## Trabalhando com repositórios remotos
+
+**Remote**
 Adicionar um endereço remoto do git:
 
 *   git remote add [_Nome do endereço_] [_Pasta ou url_]
@@ -68,45 +77,58 @@ Para verificar usa o comando:
 
    Em que o  caminha _fetch_ será de onde o código será buscado e o _push_ é o caminho para onde o código será mandado.
 
+**Clone**
 Para clonar um repositorio basta apenas:
-
 
 *  git clone [_Endereço do repositorio_]
 
+**Pull**
 Para sincronizar e atualizar nosso projeto local com o remoto basta o camando:
 
 *  git pull
 
 Para enviar as mudanças feitas localmente para o repositorio remoto, usaremos o comanda:
 *  git push [_Nome do repositorio remoto_] [_Banch que deseja enviar_]
-             
+
+## Trabalhando com Branchs
+
+**Branch**
 Para trabalhar com branchs basta usar o comando:
 *  git branch - informas as branchs atuais
 *  git branch <nome da branch> - cria uma nova branch
 
+Para deletar uma branch:
+*  git branch -D [_Nome da branch_]
+
+**Checkout**
 Para mudar de branch:
 *  git checkout <nome da branch>
 *  git checkout -b [_Nome da branch_] - cria e muda para a nova branch criada
 
-Para unir branchs:
-*  git merge [_Nome da branch_] - fazerá a união da branch informada com a branch atual na qual está
-
-*  git rebase [_Nome da branch_] - Não cria um commit de merge
-
-Para deletar uma branch:
-*  git branch -D [_Nome da branch_]
-
 Para voltar um arquivo ao estado anterior:
 *  git checkout -- [_Nome arquivo_] - antes de commitar
 
+Viagem no tempo usando o comando de mudanças:
+*  git checkout [_Hash do commit_]
+
+**Merge**
+Para unir branchs criando um commit de merge:
+*  git merge [_Nome da branch_] - fazerá a união da branch informada com a branch atual na qual está
+
+**Rebase**
+Para unir branchs sem criar um commit de merge:
+*  git rebase [_Nome da branch_] - Não cria um commit de merge
+
+**Revert**
 Para reverter um commit feito usamos:
 *  git revert [_Hsh do commit atual a ser revertido_]
 
-Ou seja para reveter mudanças segue a ordem:
+**Ordem para reverter alterações feitas**
 *  git checkout - antes de adicionalas
 *  git reset - antes de commitar
 *  git revert - após commitar
 
+**Stash**
 Para salvar as mudanças feitas temporariamente usamos o:
 *  git stash - salva a mudança
 *  git stash list - mostra a lista de salvamentos
@@ -114,30 +136,33 @@ Para salvar as mudanças feitas temporariamente usamos o:
 *  git stash drop - apaga a mudança salva
 *  git stash pop - aplica a última alteração salva, e apaga
 
-Viagem no tempo usando o comando:
-*  git checkout [_Hash do commit_]
-
+**Diff**
 Mostra as mudanças feitas não salvas:
 *  git diff
 
 Mostra as mudanças feitas em um determinado commit:
 *  git diff [_Hash do commit_]
 
+**Tag**
 Adiciona uma tag atual:
 *  git tag -a v0.1.0 -m "Menssagem na adição da tag"
+
 
 Envia para o repositorio remoto a tag:
 *  git push [_Repositorio remoto_] [_Tag a ser enviada_]
 
 ## Ao Infinito..... E além!
 
+**Unindo commits**
 Unindo vários commits em um só:
 
 * git rebase -i HEAD~[_Número de commits_]
  <br/>
 Exemplo:
      git commit -i HEAD~3
-ou
+
+<br/><center><strong>ou</strong></center><br/>
+
 * git rebase -i [_Hash do commit anterior ao qual o começa a união_]
 <br>
 Exemplo:
@@ -147,10 +172,12 @@ Exemplo:
 
 Após pedirá para você informar uma nova mensagem ao commit
 
+**Cherry-pick**
 Para pegar as mudanças feitas em um commit especifico e trazer ele para uma determinada branch atual, basta fazer o Cherry-pick, com o comando:
 
 * git cherry-pick [_Hash do commit_]
 
+**Bisect**
 Ver uma alteração feita em um commit especifico:
 
 * git bisect start -> Inicia a busca
@@ -160,6 +187,7 @@ Ver uma alteração feita em um commit especifico:
 * git bisect good -> se encontrou o problema
 * git bisect reset -> para finalizar a busca
 
+**Show**
 Para mostrar tudo o que foi feito no commit, usa o comando:
 
 * git show [_Hash do commit_]
