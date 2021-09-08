@@ -94,6 +94,9 @@ Para unir branchs:
 
 *  git rebase [_Nome da branch_] - Não cria um commit de merge
 
+Para deletar uma branch:
+*  git branch -D [_Nome da branch_]
+
 Para voltar um arquivo ao estado anterior:
 *  git checkout -- [_Nome arquivo_] - antes de commitar
 
