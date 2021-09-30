@@ -8,34 +8,51 @@ _Tendo essas considerações em mente... Tire bom proveito do conteúdo preparad
 ## Iniciando Trabalhos com o git...
 
 Com esses comando vocês informará ao git quem você é com o seu nome e o seu email de usuario git :
-*  git config --local user.name "Teu nome sô"
-*  git config --local user.email "Teu email sô"
+
+```shell
+git config --local user.name "Teu nome sô"
+git config --local user.email "Teu email sô"
+```
 
 **Init**
 Para finalmente iniciar um repositorio git local, você terá que dá o comando:
-*  git init
 
+```shell
+git init
+```
 Com esse comando será possível cirar um repositorio que guardará as alterações git, porém ele não armazeraná código, seria como um "sevidor" git:
 
-*  git init --bare
+```shell
+git init --bare
+```
 
 **Add**
 Para adicionar um arquivo ao monitoramento git basta dá:
-*  git add [_arquivo a ser monitorado_]
+
+```shell
+git add <arquivo a ser monitorado>
+```
 
 **Status**
 Para verificar o status das modificações feitas nos arquivos monitorados, basta o:
 
-*  git status
+```shell
+git status
+```
 
 **Remove (rm)**
 Para remover um arquivo do monirtoramento e remover um arquivo, basta o comando:
 
-*  git rm [_Arquivo_]
+```shell
+git rm <arquivo>
+```
 
 **Commit**
 Para salvar as mudanças feitos no código, temos o commando:
-*  git commit -m "Messagem para o commit"
+
+```shell
+git commit -m "Messagem para o commit"
+```
 
   Note que o _-m_ é para informar a mensagem do commit, caso não seja informado
   o git abrirá uma editor de texto para você esprecre uma mensagem mais longa,
@@ -43,24 +60,28 @@ Para salvar as mudanças feitos no código, temos o commando:
 
 Definições usadas pelo o Git:
 
-* *HEAD*: Estado atual do nosso código, ou seja, onde o Git os colocou
+* *HEAD* : Estado atual do nosso código, ou seja, onde o Git os colocou
 
-* *Working tree*: Local onde os arquivos realmente estão sendo armazenados e editados
+* *Working tree* : Local onde os arquivos realmente estão sendo armazenados e editados
 
-* *index*: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+* *Index* : Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
 
 **Log**
 Para verificar o historico de modificações podemos usar o comando:
 
-* git log
+```shell
+git log
+```
 
 Outra forma de verificar o log de commits:
 
 Mostra historico em apenas uma linha por commit:
 
-* git log --oneline
-* git log -p
-* git log --graph
+```shell
+git log --oneline
+git log -p
+git log --graph
+```
 
 No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 
@@ -69,104 +90,163 @@ No site [devhints](https://devhints.io/git-log) tem uma boa explicação sobre
 **Remote**
 Adicionar um endereço remoto do git:
 
-*   git remote add [_Nome do endereço_] [_Pasta ou url_]
+```shell
+git remote add <Nome do endereço> <Pasta ou url>
+```
 
 Para verificar usa o comando:
 
-*   git remote -v
+```shell
+git remote -v
+```
 
    Em que o  caminha _fetch_ será de onde o código será buscado e o _push_ é o caminho para onde o código será mandado.
 
 **Clone**
 Para clonar um repositorio basta apenas:
 
-*  git clone [_Endereço do repositorio_]
+```shell
+git clone <Endereço do repositorio>
+```
 
 **Pull**
 Para sincronizar e atualizar nosso projeto local com o remoto basta o camando:
 
-*  git pull
+```shell
+git pull
+```
 
 Para enviar as mudanças feitas localmente para o repositorio remoto, usaremos o comanda:
-*  git push [_Nome do repositorio remoto_] [_Banch que deseja enviar_]
+
+```shell
+git push <Nome do repositorio remoto> <Banch que deseja enviar>
+```
 
 ## Trabalhando com Branchs
 
 **Branch**
 Para trabalhar com branchs basta usar o comando:
-*  git branch - informas as branchs atuais
-*  git branch <nome da branch> - cria uma nova branch
+
+```shell
+git branch - informas as branchs atuais
+git branch <nome da branch> - cria uma nova branch
+```
 
 Para deletar uma branch:
-*  git branch -D [_Nome da branch_]
+
+```shell
+git branch -D <Nome da branch>
+```
 
 **Checkout**
 Para mudar de branch:
-*  git checkout <nome da branch>
-*  git checkout -b [_Nome da branch_] - cria e muda para a nova branch criada
 
+```shell
+git checkout <nome da branch>
+git checkout -b <Nome da branch> - cria e muda para a nova branch criada
+```
 Para voltar um arquivo ao estado anterior:
-*  git checkout -- [_Nome arquivo_] - antes de commitar
+
+```shell
+git checkout -- <Nome arquivo> - antes de commitar
+```
 
 Viagem no tempo usando o comando de mudanças:
-*  git checkout [_Hash do commit_]
+
+```shell
+git checkout <Hash do commit>
+```
 
 **Merge**
 Para unir branchs criando um commit de merge:
-*  git merge [_Nome da branch_] - fazerá a união da branch informada com a branch atual na qual está
 
+```shell
+git merge <Nome da branch> - fazerá a união da branch informada com a branch atual na qual está
+```
 **Rebase**
 Para unir branchs sem criar um commit de merge:
-*  git rebase [_Nome da branch_] - Não cria um commit de merge
+
+```shell
+git rebase <Nome da branch> - Não cria um commit de merge
+```
 
 **Revert**
 Para reverter um commit feito usamos:
-*  git revert [_Hsh do commit atual a ser revertido_]
+
+```shell
+git revert <Hash do commit atual a ser revertido>
+```
 
 **Ordem para reverter alterações feitas**
-*  git checkout - antes de adicionalas
-*  git reset - antes de commitar
-*  git revert - após commitar
+
+```shell
+git checkout - antes de adicionalas
+git reset - antes de commitar
+git revert - após commitar
+```
 
 **Stash**
 Para salvar as mudanças feitas temporariamente usamos o:
-*  git stash - salva a mudança
-*  git stash list - mostra a lista de salvamentos
-*  git stash apply [_Numero na lista_] - aplica a mudança feita
-*  git stash drop - apaga a mudança salva
-*  git stash pop - aplica a última alteração salva, e apaga
+
+```shell
+git stash - salva a mudança
+git stash list - mostra a lista de salvamentos
+git stash apply [_Numero na lista_] - aplica a mudança feita
+git stash drop - apaga a mudança salva
+git stash pop - aplica a última alteração salva, e apaga
+```
 
 **Diff**
 Mostra as mudanças feitas não salvas:
-*  git diff
+
+```shell
+git diff
+```
 
 Mostra as mudanças feitas em um determinado commit:
-*  git diff [_Hash do commit_]
 
+```shell
+  git diff <Hash do commit>
+```
 **Tag**
 Adiciona uma tag atual:
-*  git tag -a v0.1.0 -m "Menssagem na adição da tag"
 
+```shell
+git tag -a v0.1.0 -m "Menssagem na adição da tag"
+```
 
 Envia para o repositorio remoto a tag:
-*  git push [_Repositorio remoto_] [_Tag a ser enviada_]
+
+```shell
+git push [_Repositorio remoto_] [_Tag a ser enviada_]
+```
 
 ## Ao Infinito..... E além!
 
 **Unindo commits**
 Unindo vários commits em um só:
 
-* git rebase -i HEAD~[_Número de commits_]
- <br/>
+```shell
+git rebase -i HEAD~<Número de commits>
+```
+
 Exemplo:
+```shell
      git commit -i HEAD~3
+```
 
 <br/><center><strong>ou</strong></center><br/>
 
-* git rebase -i [_Hash do commit anterior ao qual o começa a união_]
-<br>
+```shell
+git rebase -i <Hash do commit anterior ao qual o começa a união>
+```
+
 Exemplo:
-     git commit -i 3bf3re3
+
+```shell
+git commit -i 3bf3re3
+```
+
 * pick - Deixar
 * s - Juntar
 
@@ -175,26 +255,34 @@ Após pedirá para você informar uma nova mensagem ao commit
 **Cherry-pick**
 Para pegar as mudanças feitas em um commit especifico e trazer ele para uma determinada branch atual, basta fazer o Cherry-pick, com o comando:
 
-* git cherry-pick [_Hash do commit_]
+```shell
+git cherry-pick <Hash do commit>
+```
 
 **Bisect**
 Ver uma alteração feita em um commit especifico:
 
-* git bisect start -> Inicia a busca
-* git bisect bad HEAD -> Commit Atual
-* git bisect good [_Hash do commit_] -> Onde estava bom
-* git bisect bad -> se não encontrou o problema
-* git bisect good -> se encontrou o problema
-* git bisect reset -> para finalizar a busca
+```shell
+git bisect start -> Inicia a busca
+git bisect bad HEAD -> Commit Atual
+git bisect good <Hash do commit> -> Onde estava bom
+git bisect bad -> se não encontrou o problema
+git bisect good -> se encontrou o problema
+git bisect reset -> para finalizar a busca
+```
 
 **Show**
 Para mostrar tudo o que foi feito no commit, usa o comando:
 
-* git show [_Hash do commit_]
+```shell
+git show <Hash do commit>
+```
 
 Para encontrar quem fez a alteração em um certo arquivo:
 
-* git blame [_arquivo desejado_]
+```shell
+git blame <arquivo desejado>
+```
 
 #### Tópicos Indicados
 Recomendo você dá uma pesquisada sobre os seguintes temas 😉:
